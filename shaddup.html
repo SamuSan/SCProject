@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+	<title>My FIrst Bumsex App</title>
+	<style>
+	canvas{
+		width: 100%;
+		height: 100%;
+		}
+		</style>
+
+</head>
+<body>
+
+<script src="/js/three.min.js"></script>
+<script>
+
+var scene = new THREE.Scene();
+var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+var renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+var geometry = new THREE.BoxGeometry(1,2,4);
+var geometry2 = new THREE.BoxGeometry(1,2,4);
+var geometry3 = new THREE.BoxGeometry(1,2,4);
+// var material = new THREE.MeshPhongMaterial( { ambient: 0x030303, color: 0xdddddd, specular: 0x009900, shininess: 30, shading: THREE.FlatShading } );
+// var material = new THREE.MeshLambertMaterial( { color: 0xffffff, morphTargets: true, morphNormals: true, vertexColors: THREE.FaceColors, shading: THREE.FlatShading } );
+var material = new THREE.MeshBasicMaterial({color : 0xffffff});
+var material2 = new THREE.MeshBasicMaterial({color : 0xffffff});
+var material3 = new THREE.MeshBasicMaterial({color : 0xff00ff});
+var cube = new THREE.Mesh(geometry, material);
+scene.add(cube);
+// var light = new THREE.AmbientLight( 0x404040 ); 
+// scene.add(light);// soft white light scene.add( light );
+var cube2 = new THREE.Mesh(geometry2, material2);
+scene.add(cube2);
+var cube3 = new THREE.Mesh(geometry3, material3);
+scene.add(cube3);
+
+camera.position.z =5;
+
+var render = function(){
+	// camera.position.z +=.1;
+	requestAnimationFrame(render);
+cube.rotation.x += 0.1;
+cube.rotation.y += -0.1;
+// cube2.rotation.x += -0.1;
+// cube2.rotation.y += 0.1;
+// cube3.rotation.x += -0.2;
+// cube3.rotation.y += -0.1;
+renderer.render(scene, camera);
+};
+
+render();
+
+</script>
+
+
+
+
+
+
+</body>
+
+</html>
