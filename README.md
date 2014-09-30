@@ -1,2 +1,2 @@
-SCRubyMessAbout
-===============
+SCProject
+
