@@ -2,10 +2,25 @@
 <meta charset="utf-8">
 <html>
 <head>
-
+<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <title>My first Three.js app</title>
+    <style>canvas {
+        width: 100%;
+        height: 100%
+    }</style>
 </head>
 <body>
 
+<button onclick=location.href="particles.html">BUTTTTON</button>
+<h1 id="header">ENTER YO  NAME EGG</h1>
+<div class="col-lg-6">
+    <div class="input-group">
+        <input id="userNameInput" placeholder="Enter your Soundcloud Username or Permalink" type="text" class="form-control">
+      <span class="input-group-btn">
+        <button id="userNameInputButton" class="btn btn-default" type="button" onclick="init(userNameInput.value)">Hit me!</button>
+      </span>
+    </div><!-- /input-group -->
+</div><!-- /.col-lg-6 -->
 
 
 
@@ -20,10 +35,22 @@
 
 
 
+
+
+
+
+
+
+
+
+<script src="js/three.min.js"></script>
+<script src="js/3d.demo.js"></script>
 <script src="http://connect.soundcloud.com/sdk.js"></script>
 <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script src="js/underscore.js"></script>
+<script src="js/q.js"></script>
 <script src="js/setting.js"></script>
-<script src="js/scAPICalls.js"></script>
+<script src="js/sc.api.data.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
