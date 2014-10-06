@@ -9,9 +9,10 @@
         height: 100%
     }</style>
 </head>
+<script src="//cdnjs.cloudflare.com/ajax/libs/stats.js/r11/Stats.min.js"></script>
 <body>
 
-<button onclick=location.href="particles.html">BUTTTTON</button>
+<button onclick=initParticles(userFollowers())>BUTTTTON</button>
 <h1 id="header">ENTER YO  NAME EGG</h1>
 <div class="col-lg-6">
     <div class="input-group">
@@ -21,7 +22,7 @@
       </span>
     </div><!-- /input-group -->
 </div><!-- /.col-lg-6 -->
-
+<container id="container"></container>
 
 
 
@@ -50,6 +51,7 @@
 <script src="js/underscore.js"></script>
 <script src="js/q.js"></script>
 <script src="js/setting.js"></script>
+<script src="js/follower.particles.js"></script>
 <script src="js/sc.api.data.js"></script>
 <script src="js/main.js"></script>
 </body>

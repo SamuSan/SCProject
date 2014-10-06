@@ -13,7 +13,7 @@ removeInput();
 
 
     var user_id;
-    var user = getUserId("zacinfact");
+    var user = getUserId(name);
     user.then(function (data) {
         console.log(data);
         user_id = data.id;

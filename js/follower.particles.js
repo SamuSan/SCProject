@@ -12,8 +12,8 @@ var mesh;
 initParticles();
 //animateParticles();
 
-function initParticles() {
-
+function initParticles(followers) {
+console.log(followers);
     container = document.getElementById('container');
 
     //
@@ -26,8 +26,8 @@ function initParticles() {
 
     //
 
-    var particles = 500;
-
+    var particles = followers.length;
+console.log("PARTICELS:::" +particles);
     var geometry = new THREE.BufferGeometry();
 
     var positions = new Float32Array(particles * 3);
@@ -93,10 +93,14 @@ function initParticles() {
     //
 
     window.addEventListener('resize', onWindowResize, false);
+    window.addEventListener('mouseclick', cameraZoom, false);
     animateParticles();
 
 }
 
+function cameraZoom(){
+    camera.position.z+=1;
+}
 function onWindowResize() {
 
     windowHalfX = window.innerWidth / 2;
@@ -124,8 +128,8 @@ function render() {
 
     var time = Date.now() * 0.001;
 
-    particleSystem.rotation.x = time * 0.5;
-    particleSystem.rotation.y = time * 0.5;
+    particleSystem.rotation.x = time * 0.05;
+    particleSystem.rotation.y = time * 0.05;
 
     renderer.render(scene, camera);
 

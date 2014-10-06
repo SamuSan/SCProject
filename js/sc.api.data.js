@@ -28,18 +28,25 @@ function getFollowers(user_id, limit) {
     var num_pages = (limit / 50);
     $.getJSON(soundcloudAPI + "/users/" + user_id + "/followers?.json&offset=" + 0 + "&" + CLIENT_ID, {
     }).done(function (data) {
-        getAllFollowers(num_pages).then(function (followerData) {
+        getAllFollowers(user_id,num_pages).then(function (followerData) {
+
+
+            console.log(followerData);
             followerData.push(data);
             _.flatten(followerData);
             followers = _.flatten(followerData);
             console.log(followers);
-
-            setup(followers);
+console.log("READY");
+            //setup(followers);
         });
     }).fail(function () {
         alert('ERROR');
     });
 
+}
+
+function userFollowers(){
+    return followers;
 }
 //Gets all followers for a user and returns them as an Array
 function getAllFollowers(user_id,total) {
